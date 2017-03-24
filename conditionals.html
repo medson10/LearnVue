@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <div id="app">
+      <button v-on:click="show = !show">Show / Hide</button>
+      <p v-if="show">I'm part-time visible!</p>
+      <p v-else>Am I visible ?</p>
+      <p v-show="show">Hurray, I'M here</p>
+      <hr />
+      <ul>
+        <li v-for="(person, index) in persons">{{ person.name }} - {{ index }}</li>
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+      new Vue({
+          el: '#app',
+          data: {
+              show: true,
+              persons: [
+                {name: 'Max', age: 27},
+                {name: 'Chris', age: 30},
+                {name: 'Nora', age: 25}
+              ]
+          }
+      });
+  </script>
+  </body>
+</html>
