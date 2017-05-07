@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./components.css"/>
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <div id="app">
+      <p>{{ title }}</p>
+      <hr />
+      <app-user></app-user>
+    </div>
+
+    <script type="text/javascript">
+      Vue.component('app-user', {
+        data: funciton() {
+          return {
+            users: [
+              {username: 'Max'},
+              {username: 'Chris'},
+              {username: 'Anna'}
+            ]
+          };
+        },
+        template: '<div><div class="user" v-for: "user in users"><p>Username: {{ user.username }}</p></div></div>'
+      });
+
+      new Vue({
+        el: '#app',
+        data: {
+          title: 'Hello World!'
+        }
+      });
+    </script>
+  </body>
+</html>
